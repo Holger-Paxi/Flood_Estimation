@@ -85,6 +85,12 @@ min_duration = df_increments[df_increments._TimeStep == timestep]._Duration.min(
 # %%
 AEP_frequency_req = pd.concat([AEP_frequency, pd.DataFrame({'frequency_descriptor':df_prec_depths.columns.to_list()[7:16]})], axis=1)
 
+# %%
+max_len_freq = AEP_frequency_req.frequency.apply(lambda arg: len(arg)).max()
+
+# %%
+max_len_desc = AEP_frequency_req.frequency_descriptor.apply(lambda arg: len(arg)).max()
+
 # %% [markdown]
 # ## burst duration
 
@@ -328,7 +334,9 @@ for index_14 in freq_rainseries.columns[3:]:
                 temp_list.append(f8)
 
             temp_list = pd.concat(temp_list, ignore_index=True)
-            f9 = '{}__{}__{:03}__{:02}'.format(f1, index_14, f2, index_16 + 1)
+            f9 = '{}__{}__{:03}__{:02}'.format(f1 if len(f1) == max_len_freq else f1 + (max_len_freq - len(f1)) * '_', 
+                                               index_14 if len(index_14) == max_len_desc else index_14 + (max_len_desc - len(index_14)) * '_', 
+                                               f2, index_16 + 1)
             f10 = pd.DataFrame({'frequency_AEP':[f1], 'AEP':[index_14], 'Duration':[f2], 'pattern':[index_16 + 1], 'name':[f9], 'timeserie': [temp_list]})
             freq_list.append(f10)
 
@@ -364,7 +372,9 @@ for index_14 in inte_rainseries.columns[3:]:
                 temp_list.append(f8)
 
             temp_list = pd.concat(temp_list, ignore_index=True)
-            f9 = '{}__{}__{:03}__{:02}'.format(f1, index_14, f2, index_16 + 1)
+            f9 = '{}__{}__{:03}__{:02}'.format(f1 if len(f1) == max_len_freq else f1 + (max_len_freq - len(f1)) * '_', 
+                                               index_14 if len(index_14) == max_len_desc else index_14 + (max_len_desc - len(index_14)) * '_', 
+                                               f2, index_16 + 1)
             f10 = pd.DataFrame({'frequency_AEP':[f1], 'AEP':[index_14], 'Duration':[f2], 'pattern':[index_16 + 1], 'name':[f9], 'timeserie': [temp_list]})
             inte_list.append(f10)
 
@@ -400,7 +410,9 @@ for index_14 in rare_rainseries.columns[3:]:
                 temp_list.append(f8)
 
             temp_list = pd.concat(temp_list, ignore_index=True)
-            f9 = '{}__{}__{:03}__{:02}'.format(f1, index_14, f2, index_16 + 1)
+            f9 = '{}__{}__{:03}__{:02}'.format(f1 if len(f1) == max_len_freq else f1 + (max_len_freq - len(f1)) * '_', 
+                                               index_14 if len(index_14) == max_len_desc else index_14 + (max_len_desc - len(index_14)) * '_', 
+                                               f2, index_16 + 1)
             f10 = pd.DataFrame({'frequency_AEP':[f1], 'AEP':[index_14], 'Duration':[f2], 'pattern':[index_16 + 1], 'name':[f9], 'timeserie': [temp_list]})
             rare_list.append(f10)
 
