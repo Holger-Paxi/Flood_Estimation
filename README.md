@@ -12,10 +12,20 @@
             - `depths_-33.8774_151.093_all_design.csv` file that contains the **precipitation depths**
         - `971007_SW5.inp` file that contain the pre-configured SWMM file. The modiication is in the line '704'
 - outputs:
-    - the `Output_SWMM_directory` directory is created which contains all SWMM file outputs. The format of the SWMM file name is `{frequent-intermediate-rare}__{freq_AEP}__{duration: from 10 to 120 minutes}__{pattern: from 1 to 10}`
-- other inputs to consider in the script:
+    - the `Output_SWMM_directory` directory is created which contains all SWMM file outputs. The format of the SWMM file name is `{frequent-intermediate-rare}__{freq_AEP}__{duration: from 10 to 120 minutes}__{pattern: from 1 to 10}.inp`
+- other input variables:
     - `timestep` = 5
     - `starting_date` = dt.datetime(year=2023, month=1, day=1, hour=0, minute=5, second=0)
     - `rain_gauge` = 'RainSeries1'
     - `orig_SWMM_file` = '../Inputs_FE_Assignment_3/971007_SW5.inp'
     - `output_directory` = 'Output_SWMM_directory'
+
+## simulate_obtain_SWMM_hydrographs_files
+
+- the `simulate_obtain_SWMM_hydrographs_files.ipynb` and `simulate_obtain_SWMM_hydrographs_files.py` scripts run simulations by using SWMM files (\*.inp), generate timeseries and store them in a parquet file (\*.parquet)
+- inputs:
+    - the SWMM files are simmulated are from the `Output_SWMM_directory` directory. The SWMM files has the following format: `{frequent-intermediate-rare}__{freq_AEP}__{duration: from 10 to 120 minutes}__{pattern: from 1 to 10}.inp`
+- outputs:
+    - the hydrograph timeseries are stored in `Output_SWMM_directory` following the same name format: `{frequent-intermediate-rare}__{freq_AEP}__{duration: from 10 to 120 minutes}__{pattern: from 1 to 10}.parquet`
+- other input variables:
+    - `Link_ID` = 116
