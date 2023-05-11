@@ -52,8 +52,12 @@ column_prec_depths = [df_prec_depths.columns.to_list()[index_3].replace(' ', '_'
 column_prec_depths = [column_prec_depths[index_3].replace('%', '_percentage') for index_3 in range(len(column_prec_depths))]
 column_prec_depths = [column_prec_depths[index_3].replace('EY', '_EY') for index_3 in range(len(column_prec_depths))]
 column_prec_depths = [column_prec_depths[index_3].replace('.', '_') for index_3 in range(len(column_prec_depths))]
-df_prec_depths.rename(columns={df_prec_depths.columns.to_list()[index_3]: column_prec_depths[index_3] for index_3 in range(len(column_prec_depths))}, inplace=True)
-df_prec_depths = pd.concat([df_prec_depths.iloc[:,:2], df_prec_depths.iloc[:,2:].add_prefix('freq_')], axis=1)
+df_prec_depths.rename(columns={df_prec_depths.columns.to_list()[index_3]: 
+                               column_prec_depths[index_3] for index_3 in range(len(column_prec_depths[:2]))}, 
+                               inplace=True)
+df_prec_depths.rename(columns={df_prec_depths.columns.to_list()[2:][index_3]: 
+                               'freq{:>02}_'.format(index_3) + column_prec_depths[2:][index_3] for index_3 in range(len(column_prec_depths[2:]))}, 
+                               inplace=True)
 
 # %% [markdown]
 # # data required
