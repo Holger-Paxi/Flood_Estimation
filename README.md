@@ -29,3 +29,16 @@
     - the hydrograph timeseries are stored in `Output_SWMM_directory` following the same name format: `{frequent-intermediate-rare}__{freq_AEP}__{duration: from 10 to 120 minutes}__{pattern: from 1 to 10}.parquet`
 - other input variables:
     - `Link_ID` = 116
+
+## generate_stats_plot_SWMM_hydrograph
+
+- the `generate_stats_plot_SWMM_hydrograph.ipynb` script does the statistical analysis from the SWMM results (parquet files)
+- inputs:
+    - from `Output_SWMM_directory` directory, SWMM reports in parquet extension. Their name formats are: `{frequent-intermediate-rare}__{freq_AEP}__{duration: from 10 to 120 minutes}__{pattern: from 1 to 10}.parquet`
+- outputs:
+    - `GSPSWMMH_max_flows.csv` file that contains the maximum flow for each hydrograph through all the SWMM simulations
+    - `GSPSWMMH_statistics.csv` file that contains the statistical analysis of all the flows for each duration and frequency
+    - `GSPSWMMH_design_flows.csv` file that contains the design flows, boundary limits, median and average for each frequency
+    - `GSPSWMMH__{frequent-intermediate-rare}__{freq_AEP}.png` files that are box-plots for each frequency
+    - `GSPSWMMH_design_flows.png` file that is a logarithmic plot that contains all the design flows, and boundary limits
+     
