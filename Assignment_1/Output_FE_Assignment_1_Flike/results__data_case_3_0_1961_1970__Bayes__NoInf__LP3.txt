@@ -1,0 +1,155 @@
+ Report created on 28/ 3/2024 at 17:03
+
+ -------------------------------------------------------------------------------
+ FLIKE program version 4.50
+ FLIKE file version 3.00
+
+ Title:
+
+
+ Input Data for Flood Frequency Analysis for Model: Log Pearson III
+
+ Measurement Error Data
+ Group  Error coefficient   Lower bound
+             of variation    rated flow
+ ------------------------------------------------
+     1              0.000          0.00
+
+ Gauged Annual Maximum Discharge Data
+ Obs   Discharge Year Incremental Error coefficient  Cunnane
+                      error zone       of variation  ARI,yrs*
+ ------------------------------------------------------------
+   1        7.01 1961           1             0.000     1.19
+   2       19.99 1962           1             0.000     3.92
+   3       32.97 1963           1             0.000    17.00
+   4       25.30 1964           1             0.000     6.38
+   5        8.79 1965           1             0.000     1.34
+   6       12.56 1966           1             0.000     1.55
+   7       17.20 1967           1             0.000     1.82
+   8        5.33 1968           1             0.000     1.06
+   9       18.26 1969           1             0.000     2.83
+  10       17.44 1970           1             0.000     2.22
+Note: Cunnane plotting position is based on gauged flows only
+
+
+ -------------------------------------------------------------------------------
+ Posterior Parameter Results
+
+ Data file: C:\Users\holge\Downloads\Assignment_1\data_case_3_0_1961_197
+
+
+
+
+ Flood model: Log Pearson III
+
+ >>> Fitting algorithm: Global probabilistic search
+
+ Parameter   Lower bound   Upper bound
+ -------------------------------------
+         1      -0.22339       5.55435
+         2      -2.85116       1.75401
+         3      -5.00000       5.00000
+ >>> PENALTIES were added to log-posterior density <<<
+
+ Incremental error model: Log-normal
+
+ Solution PROBABLY found in 2309 iterations
+
+ Maximized log-posterior density =   -34.4374
+
+ No Parameter                     Initial value    Most probable value
+ ---------------------------------------------------------------------
+  1 Mean (loge flow)                    2.66548                2.66548
+  2 loge [Std dev (loge flow)]         -0.54857               -0.55602
+  3 Skew (loge flow)                   -0.47036               -0.97838
+
+--------------------------------------------------
+Zero flow threshold:     0.0000
+ Number of gauged flows below flow threshold =    0
+
+--------------------------------------------------
+ Parameter Moments based on Multi-normal Approximation to Posterior Distribution
+ No Most probable       Std dev       Correlation
+ ---------------------------------------------------
+  1       2.66548       0.18882  1.000
+  2      -0.55602       0.32220 -0.494  1.000
+  3      -0.97838       0.95050 -0.042 -0.665  1.000
+ ---------------------------------------------------
+ Note: Parameters are roughly normally distributed.
+       This approximation improves with sample size.
+
+
+ Summary of Posterior Moments from Importance Sampling
+ No          Mean       Std dev       Correlation
+ ------------------------------------------------
+  1       2.62792       0.22880  1.000
+  2      -0.39855       0.28345 -0.394  1.000
+  3      -0.33096       0.79747  0.041 -0.136  1.000
+ ----------------
+ Note: Posterior expected parameters are the most
+       accurate in the mean-squared-error sense.
+       They should be used in preference to the most probable parameters
+
+
+ Upper bound =   799.966
+
+  Recurrence    Exp parameter     Monte Carlo 90% quantile
+  interval      quantile             probability limits
+      yrs
+ ---------------------------------------------------------
+      1.010           2.46           0.41           5.42
+      1.100           5.51           2.35           9.11
+      1.250           7.98           4.53          12.40
+      1.500          10.70           6.96          15.94
+      1.750          12.72           8.58          18.74
+      2.000          14.37           9.90          21.05
+      3.000          19.02          13.56          27.60
+      5.000          24.56          17.87          35.51
+     10.000          31.85          22.52          52.27
+     20.000          39.07          26.41          78.02
+     50.000          48.66          30.54         127.54
+    100.000          55.97          32.85         180.98
+    200.000          63.34          34.31         256.64
+    500.000          73.20          35.87         398.13
+   1000.000          80.73          36.57         541.29
+   2000.000          88.33          37.15         734.19
+   5000.000          98.45          37.62        1136.73
+  10000.000         106.17          38.03        1552.74
+  20000.000         113.93          38.14        2103.14
+  50000.000         124.24          38.25        3125.58
+ 100000.000         132.07          38.39        4204.10
+
+
+   Expected Probability Flood based on
+          Monte Carlo samples = 10000
+          Probability weight  = 1.000
+          Scalng factor       = 2.500
+
+      Flood        Expected    <----------ARI------------>
+      magnitude    probability       yrs     95% limits
+ ---------------------------------------------------------
+           2.46        0.02060      1.02     1.02     1.02
+           5.51        0.09578      1.11     1.10     1.11
+           7.98        0.20122      1.25     1.25     1.26
+          10.70        0.32997      1.49     1.49     1.50
+          12.72        0.42183      1.73     1.72     1.74
+          14.37        0.49103      1.96     1.96     1.97
+          19.02        0.65489      2.90     2.88     2.92
+          24.56        0.78995      4.76     4.72     4.81
+          31.85        0.89383      9.42     9.29     9.56
+          39.07        0.94485     18.13    17.76    18.52
+          48.66        0.97094     34.42    33.47    35.42
+          55.97        0.97992     49.79    48.22    51.47
+          63.34        0.98525     67.82    65.45    70.36
+          73.20        0.98954     95.61    91.93    99.61
+          80.73        0.99164    119.67   114.78   125.00
+          88.33        0.99316    146.26   139.98   153.13
+          98.45        0.99460    185.25   176.86   194.47
+         106.17        0.99540    217.59   207.39   228.84
+         113.93        0.99604    252.31   240.11   265.81
+         124.24        0.99669    301.74   286.61   318.56
+         132.07        0.99707    341.72   324.14   361.31
+
+
+
+
