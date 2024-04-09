@@ -1,0 +1,20 @@
+EY,AEP_percentage,AEP_1_in_x,ARI,freq_window,freq_label,freq_tag
+12.0,100.0,1.0,0.08,frequent,12EY,freq_12EY
+6.0,99.75,1.002,0.17,frequent,6EY,freq_6EY
+4.0,98.17,1.02,0.25,frequent,4EY,freq_4EY
+3.0,95.02,1.05,0.33,frequent,3EY,freq_3EY
+2.0,86.47,1.16,0.5,frequent,2EY,freq_2EY
+1.0,63.21,1.58,1.0,frequent,63.2%,freq_63_2_perc
+0.69,50.0,2.0,1.44,frequent,50%,freq_50_perc
+0.5,39.35,2.54,2.0,frequent,0.5EY,freq_0_5EY
+0.22,20.0,5.0,4.48,frequent,20%,freq_20_perc
+0.2,18.13,5.52,5.0,frequent,0.2EY,freq_0_2EY
+0.11,10.0,10.0,9.49,intermediate,10%,freq_10_perc
+0.05,5.0,20.0,19.5,intermediate,5%,freq_5_perc
+0.02,2.0,50.0,49.5,rare,2%,freq_2_perc
+0.01,1.0,100.0,99.5,rare,1%,freq_1_perc
+0.005,0.5,200.0,199.5,rare,1 in 200,freq_1_in_200
+0.002,0.2,500.0,499.5,rare,1 in 500,freq_1_in_500
+0.001,0.1,1000.0,999.5,rare,1 in 1000,freq_1_in_1000
+0.0005,0.05,2000.0,1999.5,rare,1 in 2000,freq_1_in_2000
+0.0002,0.02,5000.0,4999.5,rare,1 in 5000,freq_1_in_5000
