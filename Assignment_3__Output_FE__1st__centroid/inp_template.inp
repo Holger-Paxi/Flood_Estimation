@@ -5,41 +5,39 @@ POWELLS CREEK SIMULATION
 
 
 [OPTIONS]
-;;Option             Value
-FLOW_UNITS           CMS
-INFILTRATION         HORTON
-FLOW_ROUTING         KINWAVE
-LINK_OFFSETS         DEPTH
-MIN_SLOPE            0
-ALLOW_PONDING        NO
-SKIP_STEADY_STATE    NO
-
-START_DATE           10/07/1997
-START_TIME           08:32:00
-REPORT_START_DATE    10/07/1997
-REPORT_START_TIME    08:32:00
-END_DATE             10/08/1997
-END_TIME             04:32:00
-SWEEP_START          01/01
-SWEEP_END            12/31
-DRY_DAYS             0
-REPORT_STEP          00:01:00
-WET_STEP             00:00:30
-DRY_STEP             00:00:30
-ROUTING_STEP         0:00:30 
-
-INERTIAL_DAMPING     PARTIAL
-NORMAL_FLOW_LIMITED  SLOPE
-FORCE_MAIN_EQUATION  H-W
-VARIABLE_STEP        0.75
-LENGTHENING_STEP     0
-MIN_SURFAREA         12.566
-MAX_TRIALS           8
-HEAD_TOLERANCE       0.0015
-SYS_FLOW_TOL         5
-LAT_FLOW_TOL         5
-MINIMUM_STEP         0.5
-THREADS              1
+;;                    Value       
+FLOW_UNITS            CMS       
+INFILTRATION          HORTON    
+FLOW_ROUTING          KINWAVE   
+LINK_OFFSETS          DEPTH     
+MIN_SLOPE             0         
+ALLOW_PONDING         NO        
+SKIP_STEADY_STATE     NO        
+START_DATE            01/01/2000
+START_TIME            00:00:00  
+REPORT_START_DATE     01/01/2000
+REPORT_START_TIME     00:00:00  
+END_DATE              01/01/2000
+END_TIME              06:00:00  
+SWEEP_START           01/01     
+SWEEP_END             12/31     
+DRY_DAYS              0         
+REPORT_STEP           00:05:00  
+WET_STEP              00:05:00  
+DRY_STEP              00:05:00  
+ROUTING_STEP          0:00:30   
+INERTIAL_DAMPING      PARTIAL   
+NORMAL_FLOW_LIMITED   SLOPE     
+FORCE_MAIN_EQUATION   H-W       
+VARIABLE_STEP         0.75      
+LENGTHENING_STEP      0         
+MIN_SURFAREA          12.566    
+MAX_TRIALS            8         
+HEAD_TOLERANCE        0.0015    
+SYS_FLOW_TOL          5         
+LAT_FLOW_TOL          5         
+MINIMUM_STEP          0.5       
+THREADS               13        
 
 [EVAPORATION]
 ;;Data Source    Parameters
@@ -48,118 +46,114 @@ MONTHLY          3      3      3      3      3      3      3      3      3      
 DRY_ONLY         NO
 
 [RAINGAGES]
-;;Name           Format    Interval SCF      Source    
-;;-------------- --------- ------ ------ ----------
-GAGE1            VOLUME    0:02     1.0      TIMESERIES RainSeries1     
-GAGE2            VOLUME    0.03333  1.0      TIMESERIES RainSeries2     
+;;          RainType TimeIntrvl SnowCatch DataSource   DataSourceName
+RainGauge   VOLUME   00:05      1.0       TIMESERIES   RainGauge   
 
 [SUBCATCHMENTS]
-;;Name           Rain Gage        Outlet           Area     %Imperv  Width    %Slope   CurbLen  SnowPack        
-;;-------------- ---------------- ---------------- -------- -------- -------- -------- -------- ----------------
-; *       CATCHMENT DATA * JK NAMEW NGTO WW1 WW2 WW3 WW4 WW5 WW6 WW7 WW8 WW9 WW10 WW11 *
-2101             GAGE2            101              8.46     33.5     300.0    3.5      0                        
-2401             GAGE2            401              5.87     33.5     230.0    4.5      0                        
-2102             GAGE2            102              5.87     33.5     100.0    4.8      0                        
-2103             GAGE2            103              4.25     33.5     240.0    4.5      0                        
-2104             GAGE2            104              12.22    33.5     500.0    4.0      0                        
-2105             GAGE2            105              8.42     33.5     250.0    5.0      0                        
-2106             GAGE2            106              0.01     33.5     0.0      0.0      0                        
-2107             GAGE2            107              3.04     33.5     220.0    5.0      0                        
-2301             GAGE2            301              3.44     33.5     250.0    4.5      0                        
-2302             GAGE2            302              0.93     33.5     100.0    3.5      0                        
-2306             GAGE2            306              7.69     33.5     300.0    6.5      0                        
-2303             GAGE2            303              6.15     33.5     300.0    5.0      0                        
-2304             GAGE2            304              1.25     33.5     120.0    3.1      0                        
-2305             GAGE2            305              2.06     33.5     300.0    5.2      0                        
-2108             GAGE2            108              0.65     33.5     130.0    2.4      0                        
-2109             GAGE2            109              10.36    33.5     400.0    5.5      0                        
-2110             GAGE2            110              14.65    33.5     450.0    4.0      0                        
-2601             GAGE2            601              23.35    33.5     700.0    4.8      0                        
-2602             GAGE2            602              0.01     33.5     0.0      0.0      0                        
-2603             GAGE2            603              0.01     33.5     0.0      0.0      0                        
-2111             GAGE2            111              1.74     33.5     330.0    1.6      0                        
-2112             GAGE2            112              5.67     33.5     300.0    2.5      0                        
-2501             GAGE2            501              10.52    33.5     450.0    3.5      0                        
-2113             GAGE2            113              7.28     33.5     250.0    4.2      0                        
-2114             GAGE1            114              5.67     33.5     260.0    2.5      0                        
-2115             GAGE1            115              0.81     33.5     100.0    1.08     0                        
-2201             GAGE2            201              23.55    33.5     500.0    5.0      0                        
-2202             GAGE2            202              1.86     33.5     350.0    6.6      0                        
-2203             GAGE2            203              0.01     33.5     0.0      0.0      0                        
-2210             GAGE2            210              15.99    33.5     450.0    5.0      0                        
-2204             GAGE2            204              5.14     33.5     400.0    4.2      0                        
-2205             GAGE2            205              5.38     33.5     300.0    3.0      0                        
-2206             GAGE1            206              18.78    33.5     700.0    3.0      0                        
-2207             GAGE1            207              11.57    33.5     600.0    3.0      0                        
-2208             GAGE1            208              0.65     33.5     80.0     3.2      0                        
-2209             GAGE1            209              0.01     33.5     0.0      0.0      0                        
-2116             GAGE1            116              3.27     33.5     400.0    3.0      0                        
-2117             GAGE1            117              0.01     33.5     0.0      0.0      0                        
-2118             GAGE1            118              5.35     33.5     160.0    4.39     0                        
-2119             GAGE1            119              13.12    33.5     510.0    4.17     0                        
-2120             GAGE1            120              12.47    33.5     575.0    4.52     0                        
-2121             GAGE1            121              0.01     33.5     0.0      0.0      0                        
-2502             GAGE1            502              5.6      33.5     120.0    4.62     0                        
-2122             GAGE1            122              5.6      33.5     0.0      0.0      0                        
-2123             GAGE1            123              0.01     33.5     0.0      0.0      0                        
-2124             GAGE1            124              3.8      33.5     315.0    3.5      0                        
-2125             GAGE1            125              0.01     33.5     0.0      0.0      0                        
-2126             GAGE1            126              7.56     33.5     270.0    4.39     0                        
-2127             GAGE1            127              7.6      33.5     665.0    3.64     0                        
-2128             GAGE1            128              10.03    33.5     570.0    5.4      0                        
-2129             GAGE1            129              11.99    33.5     206.0    5.5      0                        
-2130             GAGE1            130              3.2      33.5     320.0    2.78     0                        
-2701             GAGE1            701              57.55    33.5     750.0    3.5      0                        
-2702             GAGE1            702              0.01     33.5     0.0      0.0      0                        
-2703             GAGE1            703              14.09    33.5     375.0    3.73     0                        
-2704             GAGE1            704              0.01     33.5     0.0      0.0      0                        
-2705             GAGE1            705              12.03    33.5     295.0    3.62     0                        
-2706             GAGE1            706              0.01     33.5     0.0      0.0      0                        
-2707             GAGE1            707              12.31    33.5     590.0    3.62     0                        
-2708             GAGE1            708              4.82     33.5     150.0    4.0      0                        
-2709             GAGE1            709              0.9      33.5     50.0     4.0      0                        
-2710             GAGE1            710              3.57     33.5     160.0    4.0      0                        
-2711             GAGE1            711              0.01     33.5     0.0      0.0      0                        
-2712             GAGE1            712              3.38     33.5     295.0    2.38     0                        
-2713             GAGE1            713              0.01     33.5     0.0      0.0      0                        
-2714             GAGE1            714              1.64     33.5     360.0    3.13     0                        
-2715             GAGE1            715              5.82     33.5     115.0    3.13     0                        
-2131             GAGE1            131              12.0     33.5     260.0    5.5      0                        
-2801             GAGE1            801              11.07    33.5     355.0    4.35     0                        
-2802             GAGE1            802              0.01     33.5     0.0      0.0      0                        
-2803             GAGE1            803              14.37    33.5     495.0    3.97     0                        
-2804             GAGE1            804              0.01     33.5     0.0      0.0      0                        
-2805             GAGE1            805              4.6      33.5     230.0    2.0      0                        
-2132             GAGE1            132              7.03     33.5     110.0    5.5      0                        
-2133             GAGE1            133              19.39    33.5     305.0    3.5      0                        
-2134             GAGE1            134              55.13    33.5     900.0    3.41     0                        
-2901             GAGE1            901              31.19    33.5     1060.0   4.5      0                        
-2902             GAGE1            902              7.8      33.5     295.0    4.5      0                        
-2903             GAGE1            903              10.85    33.5     150.0    4.5      0                        
-2904             GAGE1            904              3.17     33.5     100.0    4.5      0                        
-2905             GAGE1            905              3.55     33.5     120.0    4.55     0                        
-2906             GAGE1            906              9.46     33.5     220.0    4.55     0                        
-2907             GAGE1            907              5.86     33.5     360.0    4.55     0                        
-2908             GAGE1            908              6.16     33.5     580.0    3.66     0                        
-2909             GAGE1            909              3.26     33.5     200.0    4.94     0                        
-2910             GAGE1            910              0.01     33.5     0.0      0.0      0                        
-2911             GAGE1            911              11.3     33.5     660.0    5.0      0                        
-2925             GAGE1            925              33.43    33.5     780.0    4.84     0                        
-2912             GAGE1            912              15.04    33.5     760.0    1.41     0                        
-2913             GAGE1            913              0.01     33.5     0.0      0.0      0                        
-2914             GAGE1            914              0.01     33.5     0.0      0.0      0                        
-2915             GAGE1            915              15.04    33.5     160.0    1.56     0                        
-2926             GAGE1            926              33.6     33.5     350.0    1.58     0                        
-2916             GAGE1            916              3.67     33.5     235.0    2.0      0                        
-2917             GAGE1            917              12.93    33.5     200.0    1.56     0                        
-2918             GAGE1            918              11.35    33.5     670.0    2.3      0                        
-2919             GAGE1            919              10.2     33.5     165.0    1.56     0                        
-2920             GAGE1            920              12.18    33.5     250.0    1.56     0                        
-2921             GAGE1            921              0.01     33.5     0.0      0.0      0                        
-2922             GAGE1            922              0.01     33.5     0.0      0.0      0                        
-2923             GAGE1            923              37.15    33.5     850.0    4.55     0                        
-2924             GAGE1            924              19.86    33.5     585.0    4.55     0                        
-2135             GAGE1            135              5.07     33.5     155.0    3.2      0                        
+;;     Raingage    Outlet Area    PercImperv Width    PercSlope CurbLength
+2101   RainGauge   101    8.46    33.5       300.0    3.5       0       
+2401   RainGauge   401    5.87    33.5       230.0    4.5       0       
+2102   RainGauge   102    5.87    33.5       100.0    4.8       0       
+2103   RainGauge   103    4.25    33.5       240.0    4.5       0       
+2104   RainGauge   104    12.22   33.5       500.0    4.0       0       
+2105   RainGauge   105    8.42    33.5       250.0    5.0       0       
+2106   RainGauge   106    0.01    33.5       0.0      0.0       0       
+2107   RainGauge   107    3.04    33.5       220.0    5.0       0       
+2301   RainGauge   301    3.44    33.5       250.0    4.5       0       
+2302   RainGauge   302    0.93    33.5       100.0    3.5       0       
+2306   RainGauge   306    7.69    33.5       300.0    6.5       0       
+2303   RainGauge   303    6.15    33.5       300.0    5.0       0       
+2304   RainGauge   304    1.25    33.5       120.0    3.1       0       
+2305   RainGauge   305    2.06    33.5       300.0    5.2       0       
+2108   RainGauge   108    0.65    33.5       130.0    2.4       0       
+2109   RainGauge   109    10.36   33.5       400.0    5.5       0       
+2110   RainGauge   110    14.65   33.5       450.0    4.0       0       
+2601   RainGauge   601    23.35   33.5       700.0    4.8       0       
+2602   RainGauge   602    0.01    33.5       0.0      0.0       0       
+2603   RainGauge   603    0.01    33.5       0.0      0.0       0       
+2111   RainGauge   111    1.74    33.5       330.0    1.6       0       
+2112   RainGauge   112    5.67    33.5       300.0    2.5       0       
+2501   RainGauge   501    10.52   33.5       450.0    3.5       0       
+2113   RainGauge   113    7.28    33.5       250.0    4.2       0       
+2114   RainGauge   114    5.67    33.5       260.0    2.5       0       
+2115   RainGauge   115    0.81    33.5       100.0    1.08      0       
+2201   RainGauge   201    23.55   33.5       500.0    5.0       0       
+2202   RainGauge   202    1.86    33.5       350.0    6.6       0       
+2203   RainGauge   203    0.01    33.5       0.0      0.0       0       
+2210   RainGauge   210    15.99   33.5       450.0    5.0       0       
+2204   RainGauge   204    5.14    33.5       400.0    4.2       0       
+2205   RainGauge   205    5.38    33.5       300.0    3.0       0       
+2206   RainGauge   206    18.78   33.5       700.0    3.0       0       
+2207   RainGauge   207    11.57   33.5       600.0    3.0       0       
+2208   RainGauge   208    0.65    33.5       80.0     3.2       0       
+2209   RainGauge   209    0.01    33.5       0.0      0.0       0       
+2116   RainGauge   116    3.27    33.5       400.0    3.0       0       
+2117   RainGauge   117    0.01    33.5       0.0      0.0       0       
+2118   RainGauge   118    5.35    33.5       160.0    4.39      0       
+2119   RainGauge   119    13.12   33.5       510.0    4.17      0       
+2120   RainGauge   120    12.47   33.5       575.0    4.52      0       
+2121   RainGauge   121    0.01    33.5       0.0      0.0       0       
+2502   RainGauge   502    5.6     33.5       120.0    4.62      0       
+2122   RainGauge   122    5.6     33.5       0.0      0.0       0       
+2123   RainGauge   123    0.01    33.5       0.0      0.0       0       
+2124   RainGauge   124    3.8     33.5       315.0    3.5       0       
+2125   RainGauge   125    0.01    33.5       0.0      0.0       0       
+2126   RainGauge   126    7.56    33.5       270.0    4.39      0       
+2127   RainGauge   127    7.6     33.5       665.0    3.64      0       
+2128   RainGauge   128    10.03   33.5       570.0    5.4       0       
+2129   RainGauge   129    11.99   33.5       206.0    5.5       0       
+2130   RainGauge   130    3.2     33.5       320.0    2.78      0       
+2701   RainGauge   701    57.55   33.5       750.0    3.5       0       
+2702   RainGauge   702    0.01    33.5       0.0      0.0       0       
+2703   RainGauge   703    14.09   33.5       375.0    3.73      0       
+2704   RainGauge   704    0.01    33.5       0.0      0.0       0       
+2705   RainGauge   705    12.03   33.5       295.0    3.62      0       
+2706   RainGauge   706    0.01    33.5       0.0      0.0       0       
+2707   RainGauge   707    12.31   33.5       590.0    3.62      0       
+2708   RainGauge   708    4.82    33.5       150.0    4.0       0       
+2709   RainGauge   709    0.9     33.5       50.0     4.0       0       
+2710   RainGauge   710    3.57    33.5       160.0    4.0       0       
+2711   RainGauge   711    0.01    33.5       0.0      0.0       0       
+2712   RainGauge   712    3.38    33.5       295.0    2.38      0       
+2713   RainGauge   713    0.01    33.5       0.0      0.0       0       
+2714   RainGauge   714    1.64    33.5       360.0    3.13      0       
+2715   RainGauge   715    5.82    33.5       115.0    3.13      0       
+2131   RainGauge   131    12.0    33.5       260.0    5.5       0       
+2801   RainGauge   801    11.07   33.5       355.0    4.35      0       
+2802   RainGauge   802    0.01    33.5       0.0      0.0       0       
+2803   RainGauge   803    14.37   33.5       495.0    3.97      0       
+2804   RainGauge   804    0.01    33.5       0.0      0.0       0       
+2805   RainGauge   805    4.6     33.5       230.0    2.0       0       
+2132   RainGauge   132    7.03    33.5       110.0    5.5       0       
+2133   RainGauge   133    19.39   33.5       305.0    3.5       0       
+2134   RainGauge   134    55.13   33.5       900.0    3.41      0       
+2901   RainGauge   901    31.19   33.5       1060.0   4.5       0       
+2902   RainGauge   902    7.8     33.5       295.0    4.5       0       
+2903   RainGauge   903    10.85   33.5       150.0    4.5       0       
+2904   RainGauge   904    3.17    33.5       100.0    4.5       0       
+2905   RainGauge   905    3.55    33.5       120.0    4.55      0       
+2906   RainGauge   906    9.46    33.5       220.0    4.55      0       
+2907   RainGauge   907    5.86    33.5       360.0    4.55      0       
+2908   RainGauge   908    6.16    33.5       580.0    3.66      0       
+2909   RainGauge   909    3.26    33.5       200.0    4.94      0       
+2910   RainGauge   910    0.01    33.5       0.0      0.0       0       
+2911   RainGauge   911    11.3    33.5       660.0    5.0       0       
+2925   RainGauge   925    33.43   33.5       780.0    4.84      0       
+2912   RainGauge   912    15.04   33.5       760.0    1.41      0       
+2913   RainGauge   913    0.01    33.5       0.0      0.0       0       
+2914   RainGauge   914    0.01    33.5       0.0      0.0       0       
+2915   RainGauge   915    15.04   33.5       160.0    1.56      0       
+2926   RainGauge   926    33.6    33.5       350.0    1.58      0       
+2916   RainGauge   916    3.67    33.5       235.0    2.0       0       
+2917   RainGauge   917    12.93   33.5       200.0    1.56      0       
+2918   RainGauge   918    11.35   33.5       670.0    2.3       0       
+2919   RainGauge   919    10.2    33.5       165.0    1.56      0       
+2920   RainGauge   920    12.18   33.5       250.0    1.56      0       
+2921   RainGauge   921    0.01    33.5       0.0      0.0       0       
+2922   RainGauge   922    0.01    33.5       0.0      0.0       0       
+2923   RainGauge   923    37.15   33.5       850.0    4.55      0       
+2924   RainGauge   924    19.86   33.5       585.0    4.55      0       
+2135   RainGauge   135    5.07    33.5       155.0    3.2       0       
 
 [SUBAREAS]
 ;;Subcatchment   N-Imperv   N-Perv     S-Imperv   S-Perv     PctZero    RouteTo    PctRouted 
@@ -701,638 +695,8 @@ GAGE2            VOLUME    0.03333  1.0      TIMESERIES RainSeries2
 134              TRAPEZOIDAL  21.12            2.13       1.25       0.25       1                    
 
 [TIMESERIES]
-;;Name           Date       Time       Value     
-;;-------------- ---------- ---------- ----------
-RainSeries1      10/07/1997 08:32      0.00000
-RainSeries1                 08:34      0.2
-RainSeries1                 08:36      0.2
-RainSeries1                 08:38      0.
-RainSeries1                 08:40      0.4
-RainSeries1      10/07/1997 08:42      0.2
-RainSeries1                 08:44      0.2
-RainSeries1                 08:46      0.
-RainSeries1                 08:48      0.2
-RainSeries1                 08:50      0.2
-RainSeries1      10/07/1997 08:52      0.
-RainSeries1                 08:54      0.
-RainSeries1                 08:56      0.2
-RainSeries1                 08:58      0.2
-RainSeries1                 09:00      0.
-RainSeries1      10/07/1997 09:02      0.
-RainSeries1                 09:04      0.2
-RainSeries1                 09:06      0.
-RainSeries1                 09:08      0.2
-RainSeries1                 09:10      0.2
-RainSeries1      10/07/1997 09:12      0.2
-RainSeries1                 09:14      0.2
-RainSeries1                 09:16      0.
-RainSeries1                 09:18      0.2
-RainSeries1                 09:20      0.
-RainSeries1      10/07/1997 09:22      0.2
-RainSeries1                 09:24      0.
-RainSeries1                 09:26      0.
-RainSeries1                 09:28      0.
-RainSeries1                 09:30      0.
-RainSeries1      10/07/1997 09:32      0.
-RainSeries1                 09:34      0.
-RainSeries1                 09:36      0.
-RainSeries1                 09:38      0.2
-RainSeries1                 09:40      0.
-RainSeries1      10/07/1997 09:42      0.
-RainSeries1                 09:44      0.
-RainSeries1                 09:46      0.
-RainSeries1                 09:48      0.
-RainSeries1                 09:50      0.
-RainSeries1      10/07/1997 09:52      0.
-RainSeries1                 09:54      0.
-RainSeries1                 09:56      0.
-RainSeries1                 09:58      0.
-RainSeries1                 10:00      0.
-RainSeries1      10/07/1997 10:02      0.
-RainSeries1                 10:04      0.
-RainSeries1                 10:06      0.2
-RainSeries1                 10:08      0.
-RainSeries1                 10:10      0.
-RainSeries1      10/07/1997 10:12      0.
-RainSeries1                 10:14      0.
-RainSeries1                 10:16      0.
-RainSeries1                 10:18      0.
-RainSeries1                 10:20      0.
-RainSeries1      10/07/1997 10:22      0.2
-RainSeries1                 10:24      0.
-RainSeries1                 10:26      0.
-RainSeries1                 10:28      0.2
-RainSeries1                 10:30      0.
-RainSeries1      10/07/1997 10:32      0.2
-RainSeries1                 10:34      0.2
-RainSeries1                 10:36      0.
-RainSeries1                 10:38      0.2
-RainSeries1                 10:40      0.
-RainSeries1      10/07/1997 10:42      0.2
-RainSeries1                 10:44      0.
-RainSeries1                 10:46      0.2
-RainSeries1                 10:48      0.2
-RainSeries1                 10:50      0.2
-RainSeries1      10/07/1997 10:52      0.2
-RainSeries1                 10:54      0.2
-RainSeries1                 10:56      0.
-RainSeries1                 10:58      0.2
-RainSeries1                 11:00      0.2
-RainSeries1      10/07/1997 11:02      0.2
-RainSeries1                 11:04      0.2
-RainSeries1                 11:06      0.2
-RainSeries1                 11:08      0.4
-RainSeries1                 11:10      0.2
-RainSeries1      10/07/1997 11:12      0
-RainSeries1                 11:14      0.2
-RainSeries1                 11:16      0
-RainSeries1                 11:18      0.2
-RainSeries1                 11:20      0
-RainSeries1      10/07/1997 11:22      0
-RainSeries1                 11:24      0.2
-RainSeries1                 11:26      0
-RainSeries1                 11:28      0
-RainSeries1                 11:30      0.2
-RainSeries1      10/07/1997 11:32      0
-RainSeries1                 11:34      0
-RainSeries1                 11:36      0.2
-RainSeries1                 11:38      0
-RainSeries1                 11:40      0.2
-RainSeries1      10/07/1997 11:42      0.2
-RainSeries1                 11:44      0
-RainSeries1                 11:46      0.2
-RainSeries1                 11:48      0.2
-RainSeries1                 11:50      0
-RainSeries1      10/07/1997 11:52      0.2
-RainSeries1                 11:54      0.2
-RainSeries1                 11:56      0.2
-RainSeries1                 11:58      0.2
-RainSeries1                 12:00      0.2
-RainSeries1      10/07/1997 12:02      0.2
-RainSeries1                 12:04      0.2
-RainSeries1                 12:06      0.2
-RainSeries1                 12:08      0.2
-RainSeries1                 12:10      0.2
-RainSeries1      10/07/1997 12:12      0.2
-RainSeries1                 12:14      0.4
-RainSeries1                 12:16      0.2
-RainSeries1                 12:18      0.2
-RainSeries1                 12:20      0.4
-RainSeries1      10/07/1997 12:22      0.4
-RainSeries1                 12:24      0.2
-RainSeries1                 12:26      0.2
-RainSeries1                 12:28      0.4
-RainSeries1                 12:30      0.4
-RainSeries1      10/07/1997 12:32      0.2
-RainSeries1                 12:34      0.2
-RainSeries1                 12:36      0.4
-RainSeries1                 12:38      0.4
-RainSeries1                 12:40      0.2
-RainSeries1      10/07/1997 12:42      0.4
-RainSeries1                 12:44      0.4
-RainSeries1                 12:46      0.2
-RainSeries1                 12:48      0.4
-RainSeries1                 12:50      0.4
-RainSeries1      10/07/1997 12:52      0.4
-RainSeries1                 12:54      0.4
-RainSeries1                 12:56      0.4
-RainSeries1                 12:58      0.4
-RainSeries1                 13:00      0.4
-RainSeries1      10/07/1997 13:02      0.4
-RainSeries1                 13:04      0.4
-RainSeries1                 13:06      0.4
-RainSeries1                 13:08      0.4
-RainSeries1                 13:10      0.6
-RainSeries1      10/07/1997 13:12      0.4
-RainSeries1                 13:14      0.4
-RainSeries1                 13:16      0.6
-RainSeries1                 13:18      0.4
-RainSeries1                 13:20      0.4
-RainSeries1      10/07/1997 13:22      0.4
-RainSeries1                 13:24      0.4
-RainSeries1                 13:26      0.2
-RainSeries1                 13:28      0.4
-RainSeries1                 13:30      0.2
-RainSeries1      10/07/1997 13:32      0.2
-RainSeries1                 13:34      0.2
-RainSeries1                 13:36      0.4
-RainSeries1                 13:38      0.2
-RainSeries1                 13:40      0.2
-RainSeries1      10/07/1997 13:42      0.4
-RainSeries1                 13:44      0.2
-RainSeries1                 13:46      0.8
-RainSeries1                 13:48      0.6
-RainSeries1                 13:50      0.6
-RainSeries1      10/07/1997 13:52      1.0
-RainSeries1                 13:54      0.6
-RainSeries1                 13:56      0.8
-RainSeries1                 13:58      0.8
-RainSeries1                 14:00      0.6
-RainSeries1      10/07/1997 14:02      0.4
-RainSeries1                 14:04      0.6
-RainSeries1                 14:06      0.4
-RainSeries1                 14:08      0.2
-RainSeries1                 14:10      0.4
-RainSeries1      10/07/1997 14:12      0.2
-RainSeries1                 14:14      0.2
-RainSeries1                 14:16      0.2
-RainSeries1                 14:18      0.2
-RainSeries1                 14:20      0.
-RainSeries1      10/07/1997 14:22      0.2
-RainSeries1                 14:24      0.
-RainSeries1                 14:26      0.
-RainSeries1                 14:28      0.2
-RainSeries1                 14:30      0
-RainSeries1      10/07/1997 14:32      0.2
-RainSeries1                 14:34      0.2
-RainSeries1                 14:36      0.
-RainSeries1                 14:38      0.
-RainSeries1                 14:40      0.2
-RainSeries1      10/07/1997 14:42      0.
-RainSeries1                 14:44      0.
-RainSeries1                 14:46      0.
-RainSeries1                 14:48      0.
-RainSeries1                 14:50      0.
-RainSeries1      10/07/1997 14:52      0.
-RainSeries1                 14:54      0.
-RainSeries1                 14:56      0.
-RainSeries1                 14:58      0.
-RainSeries1                 15:00      0.
-RainSeries1      10/07/1997 15:02      0.
-RainSeries1                 15:04      0.
-RainSeries1                 15:06      0.
-RainSeries1                 15:08      0.
-RainSeries1                 15:10      0.
-RainSeries1      10/07/1997 15:12      0.
-RainSeries1                 15:14      0.
-RainSeries1                 15:16      0.
-RainSeries1                 15:18      0.
-RainSeries1                 15:20      0.
-RainSeries1      10/07/1997 15:22      0.
-RainSeries1                 15:24      0.
-RainSeries1                 15:26      0.
-RainSeries1                 15:28      0.
-RainSeries1                 15:30      0.
-RainSeries1      10/07/1997 15:32      0.
-RainSeries1                 15:34      0.
-RainSeries1                 15:36      0.
-RainSeries1                 15:38      0.
-RainSeries1                 15:40      0.
-RainSeries1      10/07/1997 15:42      0.
-RainSeries1                 15:44      0.
-RainSeries1                 15:46      0.
-RainSeries1                 15:48      0.
-RainSeries1                 15:50      0.
-RainSeries1      10/07/1997 15:52      0.2
-RainSeries1                 15:54      0.
-RainSeries1                 15:56      0.
-RainSeries1                 15:58      0.
-RainSeries1                 16:00      0.
-RainSeries1      10/07/1997 16:02      0.2
-RainSeries1                 16:04      0.
-RainSeries1                 16:06      0.2
-RainSeries1                 16:08      0.
-RainSeries1                 16:10      0.2
-RainSeries1      10/07/1997 16:12      0.2
-RainSeries1                 16:14      0.2
-RainSeries1                 16:16      0.
-RainSeries1                 16:18      0.4
-RainSeries1                 16:20      0.4
-RainSeries1      10/07/1997 16:22      0.2
-RainSeries1                 16:24      0.2
-RainSeries1                 16:26      0.4
-RainSeries1                 16:28      0.4
-RainSeries1                 16:30      0.6
-RainSeries1      10/07/1997 16:32      0.6
-RainSeries1                 16:34      0.6
-RainSeries1                 16:36      0.8
-RainSeries1                 16:38      0.4
-RainSeries1                 16:40      0.4
-RainSeries1      10/07/1997 16:42      1.2
-RainSeries1                 16:44      0.2
-RainSeries1                 16:46      0.2
-RainSeries1                 16:48      0.2
-RainSeries1                 16:50      0.
-RainSeries1      10/07/1997 16:52      0.
-RainSeries1                 16:54      0.
-RainSeries1                 16:56      0.2
-RainSeries1                 16:58      0.
-RainSeries1                 17:00      0.
-RainSeries1      10/07/1997 17:02      0.
-RainSeries1                 17:04      0.
-RainSeries1                 17:06      0.
-RainSeries1                 17:08      0.
-RainSeries1                 17:10      0.2
-RainSeries1      10/07/1997 17:12      0.
-RainSeries1                 17:14      0.
-RainSeries1                 17:16      0.
-RainSeries1                 17:18      0.
-RainSeries1                 17:20      0.
-RainSeries1      10/07/1997 17:22      0.
-RainSeries1                 17:24      0.
-RainSeries1                 17:26      0.
-RainSeries1                 17:28      0.
-RainSeries1                 17:30      0.
-RainSeries1      10/07/1997 17:32      0.
-RainSeries1                 17:34      0.
-RainSeries1                 17:36      0.
-RainSeries1                 17:38      0.
-RainSeries1                 17:40      0.
-RainSeries1      10/07/1997 17:42      0.
-RainSeries1                 17:44      0.
-RainSeries1                 17:46      0.
-RainSeries1                 17:48      0.
-RainSeries1                 17:50      0.
-RainSeries1      10/07/1997 17:52      0.
-RainSeries1                 17:54      0.
-RainSeries1                 17:56      0.
-RainSeries1                 17:58      0.
-RainSeries1                 18:00      0.
-RainSeries1      10/07/1997 18:02      0.
-RainSeries1                 18:04      0.
-RainSeries1                 18:06      0.
-RainSeries1                 18:08      0.
-RainSeries1                 18:10      0.
-RainSeries1      10/07/1997 18:12      0.
-RainSeries1                 18:14      0.
-RainSeries1                 18:16      0.
-RainSeries1                 18:18      0.
-RainSeries1                 18:20      0.
-RainSeries1      10/07/1997 18:22      0.
-RainSeries1                 18:24      0.
-RainSeries1                 18:26      0.
-RainSeries1                 18:28      0.
-RainSeries1                 18:30      0.
-RainSeries1      10/07/1997 18:32      0.
-RainSeries1                 18:34      0.
-RainSeries1                 18:36      0.
-RainSeries1                 18:38      0.
-RainSeries1                 18:40      0.
-RainSeries1      10/07/1997 18:42      0.
-RainSeries1                 18:44      0.
-RainSeries1                 18:46      0.
-RainSeries1                 18:48      0.
-RainSeries1                 18:50      0.
-RainSeries1      10/07/1997 18:52      0.2
-RainSeries1                 18:54      0.
-RainSeries1                 18:56      0.
-RainSeries1                 18:58      0.
-;                     
-RainSeries2      10/07/1997 08:32      0.2
-RainSeries2                 08:34      0.2
-RainSeries2                 08:36      0.2
-RainSeries2                 08:38      0.
-RainSeries2                 08:40      0.2
-RainSeries2      10/07/1997 08:42      0.2
-RainSeries2                 08:44      0.
-RainSeries2                 08:46      0.2
-RainSeries2                 08:48      0.
-RainSeries2                 08:50      0.
-RainSeries2      10/07/1997 08:52      0.2
-RainSeries2                 08:54      0.
-RainSeries2                 08:56      0.2
-RainSeries2                 08:58      0.
-RainSeries2                 09:00      0.
-RainSeries2      10/07/1997 09:02      0.
-RainSeries2                 09:04      0.2
-RainSeries2                 09:06      0.2
-RainSeries2                 09:08      0.
-RainSeries2                 09:10      0.2
-RainSeries2      10/07/1997 09:12      0.
-RainSeries2                 09:14      0.2
-RainSeries2                 09:16      0.
-RainSeries2                 09:18      0.
-RainSeries2                 09:20      0.
-RainSeries2      10/07/1997 09:22      0.
-RainSeries2                 09:24      0.2
-RainSeries2                 09:26      0.
-RainSeries2                 09:28      0.
-RainSeries2                 09:30      0.
-RainSeries2      10/07/1997 09:32      0.
-RainSeries2                 09:34      0.
-RainSeries2                 09:36      0.
-RainSeries2                 09:38      0.
-RainSeries2                 09:40      0.
-RainSeries2      10/07/1997 09:42      0.
-RainSeries2                 09:44      0.
-RainSeries2                 09:46      0.
-RainSeries2                 09:48      0.
-RainSeries2                 09:50      0.
-RainSeries2      10/07/1997 09:52      0.
-RainSeries2                 09:54      0.
-RainSeries2                 09:56      0.
-RainSeries2                 09:58      0.
-RainSeries2                 10:00      0.
-RainSeries2      10/07/1997 10:02      0.
-RainSeries2                 10:04      0.
-RainSeries2                 10:06      0.
-RainSeries2                 10:08      0.
-RainSeries2                 10:10      0.2
-RainSeries2      10/07/1997 10:12      0.
-RainSeries2                 10:14      0.
-RainSeries2                 10:16      0.
-RainSeries2                 10:18      0.
-RainSeries2                 10:20      0.
-RainSeries2      10/07/1997 10:22      0.2
-RainSeries2                 10:24      0.
-RainSeries2                 10:26      0.
-RainSeries2                 10:28      0.2
-RainSeries2                 10:30      0.
-RainSeries2      10/07/1997 10:32      0.2
-RainSeries2                 10:34      0.
-RainSeries2                 10:36      0.
-RainSeries2                 10:38      0.2
-RainSeries2                 10:40      0.
-RainSeries2      10/07/1997 10:42      0.2
-RainSeries2                 10:44      0.2
-RainSeries2                 10:46      0.
-RainSeries2                 10:48      0.2
-RainSeries2                 10:50      0.2
-RainSeries2      10/07/1997 10:52      0.
-RainSeries2                 10:54      0.2
-RainSeries2                 10:56      0.2
-RainSeries2                 10:58      0.
-RainSeries2                 11:00      0.2
-RainSeries2      10/07/1997 11:02      0.2
-RainSeries2                 11:04      0.2
-RainSeries2                 11:06      0.2
-RainSeries2                 11:08      0.2
-RainSeries2                 11:10      0.
-RainSeries2      10/07/1997 11:12      0.
-RainSeries2                 11:14      0.
-RainSeries2                 11:16      0.2
-RainSeries2                 11:18      0.
-RainSeries2                 11:20      0.
-RainSeries2      10/07/1997 11:22      0.
-RainSeries2                 11:24      0.2
-RainSeries2                 11:26      0.
-RainSeries2                 11:28      0.
-RainSeries2                 11:30      0.
-RainSeries2      10/07/1997 11:32      0.
-RainSeries2                 11:34      0.2
-RainSeries2                 11:36      0.
-RainSeries2                 11:38      0.2
-RainSeries2                 11:40      0.
-RainSeries2      10/07/1997 11:42      0.2
-RainSeries2                 11:44      0.
-RainSeries2                 11:46      0.2
-RainSeries2                 11:48      0.
-RainSeries2                 11:50      0.2
-RainSeries2      10/07/1997 11:52      0.2
-RainSeries2                 11:54      0.
-RainSeries2                 11:56      0.2
-RainSeries2                 11:58      0.2
-RainSeries2                 12:00      0.
-RainSeries2      10/07/1997 12:02      0.2
-RainSeries2                 12:04      0.2
-RainSeries2                 12:06      0.2
-RainSeries2                 12:08      0.
-RainSeries2                 12:10      0.2
-RainSeries2      10/07/1997 12:12      0.2
-RainSeries2                 12:14      0.2
-RainSeries2                 12:16      0.2
-RainSeries2                 12:18      0.2
-RainSeries2                 12:20      0.2
-RainSeries2      10/07/1997 12:22      0.2
-RainSeries2                 12:24      0.2
-RainSeries2                 12:26      0.2
-RainSeries2                 12:28      0.2
-RainSeries2                 12:30      0.2
-RainSeries2      10/07/1997 12:32      0.2
-RainSeries2                 12:34      0.4
-RainSeries2                 12:36      0.2
-RainSeries2                 12:38      0.2
-RainSeries2                 12:40      0.2
-RainSeries2      10/07/1997 12:42      0.4
-RainSeries2                 12:44      0.2
-RainSeries2                 12:46      0.2
-RainSeries2                 12:48      0.2
-RainSeries2                 12:50      0.4
-RainSeries2      10/07/1997 12:52      0.2
-RainSeries2                 12:54      0.4
-RainSeries2                 12:56      0.2
-RainSeries2                 12:58      0.4
-RainSeries2                 13:00      0.4
-RainSeries2      10/07/1997 13:02      0.2
-RainSeries2                 13:04      0.4
-RainSeries2                 13:06      0.6
-RainSeries2                 13:08      0.6
-RainSeries2                 13:10      0.2
-RainSeries2      10/07/1997 13:12      0.4
-RainSeries2                 13:14      0.4
-RainSeries2                 13:16      0.2
-RainSeries2                 13:18      0.6
-RainSeries2                 13:20      0.2
-RainSeries2      10/07/1997 13:22      0.2
-RainSeries2                 13:24      0.2
-RainSeries2                 13:26      0.4
-RainSeries2                 13:28      0.2
-RainSeries2                 13:30      0.2
-RainSeries2      10/07/1997 13:32      0.2
-RainSeries2                 13:34      0.2
-RainSeries2                 13:36      0.2
-RainSeries2                 13:38      0.2
-RainSeries2                 13:40      0.2
-RainSeries2      10/07/1997 13:42      0.6
-RainSeries2                 13:44      0.4
-RainSeries2                 13:46      1.
-RainSeries2                 13:48      0.6
-RainSeries2                 13:50      0.6
-RainSeries2      10/07/1997 13:52      0.8
-RainSeries2                 13:54      0.6
-RainSeries2                 13:56      1.
-RainSeries2                 13:58      0.2
-RainSeries2                 14:00      0.4
-RainSeries2      10/07/1997 14:02      0.8
-RainSeries2                 14:04      0.4
-RainSeries2                 14:06      0.4
-RainSeries2                 14:08      0.6
-RainSeries2                 14:10      0.2
-RainSeries2      10/07/1997 14:12      0.
-RainSeries2                 14:14      0.2
-RainSeries2                 14:16      0.
-RainSeries2                 14:18      0.
-RainSeries2                 14:20      0.2
-RainSeries2      10/07/1997 14:22      0.
-RainSeries2                 14:24      0.
-RainSeries2                 14:26      0.
-RainSeries2                 14:28      0.2
-RainSeries2                 14:30      0.
-RainSeries2      10/07/1997 14:32      0.2
-RainSeries2                 14:34      0.
-RainSeries2                 14:36      0.2
-RainSeries2                 14:38      0.
-RainSeries2                 14:40      0.
-RainSeries2      10/07/1997 14:42      0.
-RainSeries2                 14:44      0.
-RainSeries2                 14:46      0.
-RainSeries2                 14:48      0.
-RainSeries2                 14:50      0.
-RainSeries2      10/07/1997 14:52      0.
-RainSeries2                 14:54      0.
-RainSeries2                 14:56      0.
-RainSeries2                 14:58      0.
-RainSeries2                 15:00      0.
-RainSeries2      10/07/1997 15:02      0.
-RainSeries2                 15:04      0.
-RainSeries2                 15:06      0.
-RainSeries2                 15:08      0.
-RainSeries2                 15:10      0.
-RainSeries2      10/07/1997 15:12      0.
-RainSeries2                 15:14      0.
-RainSeries2                 15:16      0.
-RainSeries2                 15:18      0.
-RainSeries2                 15:20      0.
-RainSeries2      10/07/1997 15:22      0.
-RainSeries2                 15:24      0.
-RainSeries2                 15:26      0.
-RainSeries2                 15:28      0.
-RainSeries2                 15:30      0.
-RainSeries2      10/07/1997 15:32      0.
-RainSeries2                 15:34      0.
-RainSeries2                 15:36      0.
-RainSeries2                 15:38      0.
-RainSeries2                 15:40      0.
-RainSeries2      10/07/1997 15:42      0.
-RainSeries2                 15:44      0.
-RainSeries2                 15:46      0.2
-RainSeries2                 15:48      0.
-RainSeries2                 15:50      0.
-RainSeries2      10/07/1997 15:52      0.
-RainSeries2                 15:54      0.2
-RainSeries2                 15:56      0.
-RainSeries2                 15:58      0.
-RainSeries2                 16:00      0.
-RainSeries2      10/07/1997 16:02      0.2
-RainSeries2                 16:04      0.
-RainSeries2                 16:06      0.
-RainSeries2                 16:08      0.2
-RainSeries2                 16:10      0.2
-RainSeries2      10/07/1997 16:12      0.2
-RainSeries2                 16:14      0.
-RainSeries2                 16:16      0.8
-RainSeries2                 16:18      0.2
-RainSeries2                 16:20      0.2
-RainSeries2      10/07/1997 16:22      0.4
-RainSeries2                 16:24      0.2
-RainSeries2                 16:26      0.2
-RainSeries2                 16:28      0.4
-RainSeries2                 16:30      0.2
-RainSeries2      10/07/1997 16:32      0.4
-RainSeries2                 16:34      0.6
-RainSeries2                 16:36      0.2
-RainSeries2                 16:38      1.2
-RainSeries2                 16:40      0.4
-RainSeries2      10/07/1997 16:42      0.2
-RainSeries2                 16:44      0.2
-RainSeries2                 16:46      0.
-RainSeries2                 16:48      0.
-RainSeries2                 16:50      0.
-RainSeries2      10/07/1997 16:52      0.2
-RainSeries2                 16:54      0.
-RainSeries2                 16:56      0.
-RainSeries2                 16:58      0.
-RainSeries2                 17:00      0.
-RainSeries2      10/07/1997 17:02      0.
-RainSeries2                 17:04      0.
-RainSeries2                 17:06      0.
-RainSeries2                 17:08      0.
-RainSeries2                 17:10      0.
-RainSeries2      10/07/1997 17:12      0.
-RainSeries2                 17:14      0.
-RainSeries2                 17:16      0.2
-RainSeries2                 17:18      0.
-RainSeries2                 17:20      0.
-RainSeries2      10/07/1997 17:22      0.
-RainSeries2                 17:24      0.
-RainSeries2                 17:26      0.
-RainSeries2                 17:28      0.
-RainSeries2                 17:30      0.
-RainSeries2      10/07/1997 17:32      0.
-RainSeries2                 17:34      0.
-RainSeries2                 17:36      0.
-RainSeries2                 17:38      0.
-RainSeries2                 17:40      0.
-RainSeries2      10/07/1997 17:42      0.
-RainSeries2                 17:44      0.
-RainSeries2                 17:46      0.
-RainSeries2                 17:48      0.
-RainSeries2                 17:50      0.
-RainSeries2      10/07/1997 17:52      0.
-RainSeries2                 17:54      0.
-RainSeries2                 17:56      0.
-RainSeries2                 17:58      0.
-RainSeries2                 18:00      0.
-RainSeries2      10/07/1997 18:02      0.
-RainSeries2                 18:04      0.
-RainSeries2                 18:06      0.
-RainSeries2                 18:08      0.
-RainSeries2                 18:10      0.
-RainSeries2      10/07/1997 18:12      0.
-RainSeries2                 18:14      0.
-RainSeries2                 18:16      0.
-RainSeries2                 18:18      0.
-RainSeries2                 18:20      0.
-RainSeries2      10/07/1997 18:22      0.
-RainSeries2                 18:24      0.
-RainSeries2                 18:26      0.
-RainSeries2                 18:28      0.
-RainSeries2                 18:30      0.
-RainSeries2      10/07/1997 18:32      0.
-RainSeries2                 18:34      0.
-RainSeries2                 18:36      0.
-RainSeries2                 18:38      0.
-RainSeries2                 18:40      0.
-RainSeries2      10/07/1997 18:42      0.
-RainSeries2                 18:44      0.
-RainSeries2                 18:46      0.
-RainSeries2                 18:48      0.
-RainSeries2                 18:50      0.2
-RainSeries2      10/07/1997 18:52      0.
-RainSeries2                 18:54      0.
-RainSeries2                 18:56      0.
-RainSeries2                 18:58      0.
-;
+;;          Date         Time    Value
+RainGauge   01/01/2000   00:00   0.0
 
 [REPORT]
 ;;Reporting Options
