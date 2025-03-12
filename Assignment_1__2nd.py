@@ -87,7 +87,7 @@ def main():
 
     # %%
     def prepare_data(arg_output_dir, arg_prob_fit, arg_data_case, arg_df):
-        df = arg_df.iloc[8:,:].copy()
+        df = arg_df.iloc[[5,7,8,9,10,11]].copy()
         df.reset_index(drop=True, inplace=True)
         df.to_csv(path_or_buf='{}df_{}_{}.csv'.format(arg_output_dir, arg_prob_fit, arg_data_case), index=False)
         return df
@@ -119,28 +119,34 @@ def main():
 
         for ind1, ind2 in zip(arg_df_data.ARI.to_numpy(), arg_df_data.flow_rate.to_numpy()):
             ax.annotate(
-                text=ind2,
+                text='{}: {}'.format(int(ind1), ind2),
                 xy=(ind1, ind2),
-                xytext=(5, -2.5),
+                xytext=(5, 0),
                 textcoords='offset points',
+                va='center',
+                ha='left',
                 fontsize=8
                 )
 
         for ind1, ind2 in zip(arg_df_data.ARI.to_numpy(), arg_df_data.upper_95.to_numpy()):
             ax.annotate(
-                text=ind2,
+                text='{}: {}'.format(int(ind1), ind2),
                 xy=(ind1, ind2),
-                xytext=(5, 2),
+                xytext=(5, 7),
                 textcoords='offset points',
+                va='center',
+                ha='left',
                 fontsize=8
                 )
 
         for ind1, ind2 in zip(arg_df_data.ARI.to_numpy(), arg_df_data.lower_5.to_numpy()):
             ax.annotate(
-                text=ind2,
+                text='{}: {}'.format(int(ind1), ind2),
                 xy=(ind1, ind2),
-                xytext=(5, -7.5),
+                xytext=(5, -7),
                 textcoords='offset points',
+                va='center',
+                ha='left',
                 fontsize=8
                 )
 
@@ -208,28 +214,34 @@ def main():
 
             for ind1, ind2 in zip(value.df_data.ARI.to_numpy(), value.df_data.flow_rate.to_numpy()):
                 ax[key].annotate(
-                    text=ind2,
+                    text='{}: {}'.format(int(ind1), ind2),
                     xy=(ind1, ind2),
-                    xytext=(5, -2.5),
+                    xytext=(5, 0),
                     textcoords='offset points',
+                    va='center',
+                    ha='left',
                     fontsize=8
                     )
 
             for ind1, ind2 in zip(value.df_data.ARI.to_numpy(), value.df_data.upper_95.to_numpy()):
                 ax[key].annotate(
-                    text=ind2,
+                    text='{}: {}'.format(int(ind1), ind2),
                     xy=(ind1, ind2),
-                    xytext=(5, 2),
+                    xytext=(5, 7),
                     textcoords='offset points',
+                    va='center',
+                    ha='left',
                     fontsize=8
                     )
 
             for ind1, ind2 in zip(value.df_data.ARI.to_numpy(), value.df_data.lower_5.to_numpy()):
                 ax[key].annotate(
-                    text=ind2,
+                    text='{}: {}'.format(int(ind1), ind2),
                     xy=(ind1, ind2),
-                    xytext=(5, -7.5),
+                    xytext=(5, -7),
                     textcoords='offset points',
+                    va='center',
+                    ha='left',
                     fontsize=8
                     )
 
@@ -256,11 +268,6 @@ def main():
                 ),
             bbox_inches='tight'
             )
-        
-        # close figure
-        plt.cla()
-        plt.clf()
-        plt.close(fig=fig)
 
     # %%
     for ind1 in results_GEV:
