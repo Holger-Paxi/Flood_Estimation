@@ -1,0 +1,42 @@
+RESULTS FROM ARR RFFE 2015 MODEL
+
+Datetime: 2025-03-19 13:11
+Region name: East Coast
+Region code: 1
+Site name: Powells Creek
+Latitude at catchment outlet (degree) = -33.8702
+Longitude at catchment outlet (degree) = 151.091
+Latitude at catchment centroid (degree) = -33.8774
+Longitude at catchment centroid (degree) = 151.093
+Distance of the nearest gauged catchment in the database (km) = 10.52
+Catchment area (sq km) = 2.4
+Design rainfall intensity, 1 in 2 AEP and 6 hr duration (mm/h): 9.520465
+Design rainfall intensity, 1 in 50 AEP and 6 hr duration (mm/h): 19.072492
+Shape factor of the ungauged catchment: 0.53
+
+
+ESTIMATED FLOOD QUANTILES:
+
+  AEP (%)        Expected quantiles (m^3/s)    5% CL  m^3/s       95% CL  m^3/s
+    50                      18.1                   7.49                43.3
+    20                      42.1                   18.3                96.9
+    10                      66.0                   28.8                 152
+     5                      96.2                   41.4                 225
+     2                       148                   62.1                 354
+     1                       197                   81.3                 483
+
+DATA FOR FITTING MULTI-NORMAL DISTRIBUTION FOR BUILDING CONFIDENCE LIMITS:
+
+1 Mean (loge flow) = 2.828
+2 St dev (loge flow) = 0.988
+3 Skew (loge flow) = 0.084
+
+
+Moments and correlations:
+
+ No    Most probable       Std dev                     Correlation
+  1        2.828            0.517              1.000
+  2        0.988            0.147             -0.330      1.000
+  3        0.084            0.027              0.170     -0.280      1.000
+
+This is the end of output file.

@@ -12,7 +12,7 @@ def main():
     # # input
 
     # %%
-    input_rffa_file = './Assignment_2__Input_FE/output.txt'
+    input_rffa_file = './Assignment_2__Input_FE/inputs_2025_Autumn/output.txt'
     arg_skip_row_ind_rffa = 20
     input_ffa_dir = './Assignment_1__Output_FE__2nd/'
     output_dir = './Assignment_2__Output_FE/'
@@ -75,7 +75,7 @@ def main():
     RFFA_results
 
     # %%
-    df_RFFA_results = RFFA_results.copy().iloc[2:]
+    df_RFFA_results = RFFA_results.copy()
     df_RFFA_results.reset_index(drop=True, inplace=True)
     df_RFFA_results.to_csv(path_or_buf='{}df_RFFA_full_data.csv'.format(output_dir), index=False)
 
@@ -129,28 +129,34 @@ def main():
 
         for ind1, ind2 in zip(arg_df_data.ARI.to_numpy(), arg_df_data.flow_rate.to_numpy()):
             ax.annotate(
-                text=ind2,
+                text='{}: {}'.format(int(ind1), ind2),
                 xy=(ind1, ind2),
-                xytext=(5, -2.5),
+                xytext=(5, 0),
                 textcoords='offset points',
+                va='center',
+                ha='left',
                 fontsize=8
                 )
 
         for ind1, ind2 in zip(arg_df_data.ARI.to_numpy(), arg_df_data.upper_95.to_numpy()):
             ax.annotate(
-                text=ind2,
+                text='{}: {}'.format(int(ind1), ind2),
                 xy=(ind1, ind2),
-                xytext=(5, 2),
+                xytext=(5, 7),
                 textcoords='offset points',
+                va='center',
+                ha='left',
                 fontsize=8
                 )
 
         for ind1, ind2 in zip(arg_df_data.ARI.to_numpy(), arg_df_data.lower_5.to_numpy()):
             ax.annotate(
-                text=ind2,
+                text='{}: {}'.format(int(ind1), ind2),
                 xy=(ind1, ind2),
-                xytext=(5, -7.5),
+                xytext=(5, -7),
                 textcoords='offset points',
+                va='center',
+                ha='left',
                 fontsize=8
                 )
 
@@ -203,28 +209,34 @@ def main():
 
             for ind1, ind2 in zip(value.df_data.ARI.to_numpy(), value.df_data.flow_rate.to_numpy()):
                 ax[key].annotate(
-                    text=ind2,
+                    text='{}: {}'.format(int(ind1), ind2),
                     xy=(ind1, ind2),
-                    xytext=(5, -2.5),
+                    xytext=(5, 0),
                     textcoords='offset points',
+                    va='center',
+                    ha='left',
                     fontsize=8
                     )
 
             for ind1, ind2 in zip(value.df_data.ARI.to_numpy(), value.df_data.upper_95.to_numpy()):
                 ax[key].annotate(
-                    text=ind2,
+                    text='{}: {}'.format(int(ind1), ind2),
                     xy=(ind1, ind2),
-                    xytext=(5, 2),
+                    xytext=(5, 7),
                     textcoords='offset points',
+                    va='center',
+                    ha='left',
                     fontsize=8
                     )
 
             for ind1, ind2 in zip(value.df_data.ARI.to_numpy(), value.df_data.lower_5.to_numpy()):
                 ax[key].annotate(
-                    text=ind2,
+                    text='{}: {}'.format(int(ind1), ind2),
                     xy=(ind1, ind2),
-                    xytext=(5, -7.5),
+                    xytext=(5, -7),
                     textcoords='offset points',
+                    va='center',
+                    ha='left',
                     fontsize=8
                     )
 
@@ -262,38 +274,81 @@ def main():
 
         data = [arg_df_RFFA, arg_df_FFA]
         colors = ['tab:blue', 'tab:red']
-        # count = np.arange(stop=len(data))
+        count = np.arange(stop=len(colors))
 
         value_prob_fit = []
 
         fig, ax = plt.subplots(figsize=(10,6))
 
-        for value, color in zip(data, colors):
-            ax.plot(
-                value.df.ARI.to_numpy(),
-                value.df.flow_rate.to_numpy(),
-                '-o',
-                color=color,
-                linewidth=0.5,
-                markersize=2
-                )
+        for enu, value, color in zip(count, data, colors):
 
-            ax.fill_between(
-                x=value.df.ARI.to_numpy(),
-                y1=value.df.upper_95.to_numpy(),
-                y2=value.df.lower_5.to_numpy(),
-                color=color,
-                alpha=0.2
-                )
+            if enu%2 == 0:
 
-            for ind1, ind2 in zip(value.df_data.ARI.to_numpy(), value.df_data.flow_rate.to_numpy()):
-                ax.annotate(
-                    text=ind2,
-                    xy=(ind1, ind2),
-                    xytext=(5, -2.5),
-                    textcoords='offset points',
-                    fontsize=8
+                ax.plot(
+                    value.df.ARI.to_numpy(),
+                    value.df.flow_rate.to_numpy(),
+                    '-o',
+                    color=color,
+                    linewidth=0.5,
+                    markersize=2
                     )
+
+                ax.fill_between(
+                    x=value.df.ARI.to_numpy(),
+                    y1=value.df.upper_95.to_numpy(),
+                    y2=value.df.lower_5.to_numpy(),
+                    color=color,
+                    alpha=0.2
+                    )
+
+                for ind1, ind2, ind3, ind4 in zip(
+                    value.df_data.ARI.to_numpy(), value.df_data.flow_rate.to_numpy(), 
+                    value.df_data.upper_95.to_numpy(), value.df_data.lower_5.to_numpy()
+                    ):
+                    ax.annotate(
+                        text='UL: {2:}\n{0:}: {1:}\nLL: {3:}'.format(int(ind1), ind2, ind3, ind4),
+                        xy=(ind1, ind2),
+                        xytext=(15, 15),
+                        textcoords='offset points',
+                        va='center',
+                        ha='left',
+                        fontsize=8,
+                        arrowprops=dict(arrowstyle='-', linewidth=0.3)
+                        )
+            
+            elif enu%2 != 0:
+
+                ax.plot(
+                    value.df.ARI.to_numpy(),
+                    value.df.flow_rate.to_numpy(),
+                    '-o',
+                    color=color,
+                    linewidth=0.5,
+                    markersize=2
+                    )
+
+                ax.fill_between(
+                    x=value.df.ARI.to_numpy(),
+                    y1=value.df.upper_95.to_numpy(),
+                    y2=value.df.lower_5.to_numpy(),
+                    color=color,
+                    alpha=0.2
+                    )
+
+                for ind1, ind2, ind3, ind4 in zip(
+                    value.df_data.ARI.to_numpy(), value.df_data.flow_rate.to_numpy(),
+                    value.df_data.upper_95.to_numpy(), value.df_data.lower_5.to_numpy()
+                    ):
+                    ax.annotate(
+                        text='UL: {2:}\n{0:}: {1:}\nLL: {3:}'.format(int(ind1), ind2, ind3, ind4),
+                        xy=(ind1, ind2),
+                        xytext=(15, -15),
+                        textcoords='offset points',
+                        va='center',
+                        ha='left',
+                        fontsize=8,
+                        arrowprops=dict(arrowstyle='-', linewidth=0.3)
+                        )
 
             value_prob_fit.append(value.prob_fit)
 
