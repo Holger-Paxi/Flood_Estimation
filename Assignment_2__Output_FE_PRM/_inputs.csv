@@ -1,0 +1,11 @@
+Input Parameters,Values
+Catchment Area (km^2),2.4
+C_10 min contour,0.6
+C_10 max contour,0.8
+C_10 mean contour,0.7
+Zone,B
+Elevation,Below 500m
+tc (min),63.59824252533506
+tc (h),1.0599707087555843
+I_12h_50y (mm),15.9
+I_12h_2y (mm),7.69
